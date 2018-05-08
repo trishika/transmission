@@ -98,115 +98,115 @@ type TorrentMap map[string]*Torrent
 
 // SetTorrentArg arguments for Torrent.Set method
 type SetTorrentArg struct {
-	BandwidthPriority   int      `json:"bandwidthPriority,omitempty"`
-	DownloadLimit       int      `json:"downloadLimit,omitempty"`
+	BandwidthPriority   int64    `json:"bandwidthPriority,omitempty"`
+	DownloadLimit       int64    `json:"downloadLimit,omitempty"`
 	DownloadLimited     bool     `json:"downloadLimited,omitempty"`
-	FilesWanted         []int    `json:"files-wanted,omitempty"`
-	FilesUnwanted       []int    `json:"files-unwanted,omitempty"`
+	FilesWanted         []int64  `json:"files-wanted,omitempty"`
+	FilesUnwanted       []int64  `json:"files-unwanted,omitempty"`
 	HonorsSessionLimits bool     `json:"honorsSessionLimits,omitempty"`
-	Ids                 int      `json:"ids"`
+	Ids                 int64    `json:"ids"`
 	Location            string   `json:"location,omitempty"`
-	PeerLimit           int      `json:"peer-limit,omitempty"`
-	PriorityHigh        []int    `json:"priority-high,omitempty"`
-	PriorityLow         []int    `json:"priority-low,omitempty"`
-	PriorityNormal      []int    `json:"priority-normal,omitempty"`
-	QueuePosition       int      `json:"queuePosition,omitempty"`
-	SeedIdleLimit       int      `json:"seedIdleLimit,omitempty"`
-	SeedIdleMode        int      `json:"seedIdleMode,omitempty"`
+	PeerLimit           int64    `json:"peer-limit,omitempty"`
+	PriorityHigh        []int64  `json:"priority-high,omitempty"`
+	PriorityLow         []int64  `json:"priority-low,omitempty"`
+	PriorityNormal      []int64  `json:"priority-normal,omitempty"`
+	QueuePosition       int64    `json:"queuePosition,omitempty"`
+	SeedIdleLimit       int64    `json:"seedIdleLimit,omitempty"`
+	SeedIdleMode        int64    `json:"seedIdleMode,omitempty"`
 	SeedRatioLimit      float64  `json:"seedRatioLimit,omitempty"`
-	SeedRatioMode       int      `json:"seedRatioMode,omitempty"`
+	SeedRatioMode       int64    `json:"seedRatioMode,omitempty"`
 	TrackerAdd          []string `json:"trackerAdd,omitempty"`
-	TrackerRemove       []int    `json:"trackerRemove,omitempty"`
+	TrackerRemove       []int64  `json:"trackerRemove,omitempty"`
 	// TrackerReplace       `json:"trackerReplace,omitempty"`
-	UploadLimit   int  `json:"uploadLimit,omitempty"`
-	UploadLimited bool `json:"uploadLimited,omitempty"`
+	UploadLimit   int64          `json:"uploadLimit,omitempty"`
+	UploadLimited bool           `json:"uploadLimited,omitempty"`
 }
 
 // Torrent represent a torrent present in transmission
 type Torrent struct {
 	Client                  *Client `json:"-"`
-	ActivityDate            int
-	AddedDate               int
-	BandwidthPriority       int
+	ActivityDate            int64
+	AddedDate               int64
+	BandwidthPriority       int64
 	Comment                 string
-	CorruptEver             int
+	CorruptEver             int64
 	Creator                 string
-	DateCreated             int
-	DesiredAvailable        int
-	DoneDate                int
+	DateCreated             int64
+	DesiredAvailable        int64
+	DoneDate                int64
 	DownloadDir             string
-	DownloadedEver          int
-	DownloadLimit           int
+	DownloadedEver          int64
+	DownloadLimit           int64
 	DownloadLimited         bool
-	Error                   int
+	Error                   int64
 	ErrorString             string
-	Eta                     int
-	EtaIdle                 int
+	Eta                     int64
+	EtaIdle                 int64
 	Files                   *[]File
 	FileStats               *[]FileStats
 	HashString              string
-	HaveUnchecked           int
-	HaveValid               int
+	HaveUnchecked           int64
+	HaveValid               int64
 	HonorsSessionLimits     bool
-	ID                      int
+	ID                      int64
 	IsFinished              bool
 	IsPrivate               bool
 	IsStalled               bool
-	LeftUntilDone           int
+	LeftUntilDone           int64
 	MagnetLink              string
-	ManualAnnounceTime      int
-	MaxConnectedPeers       int
+	ManualAnnounceTime      int64
+	MaxConnectedPeers       int64
 	MetadataPercentComplete float64
 	Name                    string
-	Peerlimit               int
+	Peerlimit               int64
 	Peers                   *[]Peers
-	PeersConnected          int
+	PeersConnected          int64
 	PeersFrom               PeersFrom
-	PeersGettingFromUs      int
-	PeersSendingToUs        int
+	PeersGettingFromUs      int64
+	PeersSendingToUs        int64
 	PercentDone             float64
 	Pieces                  string
-	PieceCount              int
-	PieceSize               int
-	Priorities              []int
-	QueuePosition           int
-	RateDownload            int
-	RateUpload              int
+	PieceCount              int64
+	PieceSize               int64
+	Priorities              []int64
+	QueuePosition           int64
+	RateDownload            int64
+	RateUpload              int64
 	RecheckProgress         float64
-	SecondsDownloading      int
-	SecondsSeeding          int
-	SeedIdleLimit           int
-	SeedIdleMode            int
+	SecondsDownloading      int64
+	SecondsSeeding          int64
+	SeedIdleLimit           int64
+	SeedIdleMode            int64
 	SeedRatioLimit          float64
-	SeedRatioMode           int
-	SizeWhenDone            int
-	StartDate               int
-	Status                  int
+	SeedRatioMode           int64
+	SizeWhenDone            int64
+	StartDate               int64
+	Status                  int64
 	Trackers                *[]Trackers
 	TrackerStats            *[]TrackerStats
-	TotalSize               int
+	TotalSize               int64
 	TorrentFile             string
-	UploadedEver            int
-	UploadLimit             int
+	UploadedEver            int64
+	UploadLimit             int64
 	UploadLimited           bool
 	UploadRatio             float64
-	Wanted                  []int
+	Wanted                  []int64
 	Webseeds                []string
-	WebseedsSendingToUs     int
+	WebseedsSendingToUs     int64
 }
 
 // File transmission API response
 type File struct {
-	BytesCompleted int
-	Length         int
+	BytesCompleted int64
+	Length         int64
 	Name           string
 }
 
 // FileStats transmission API response
 type FileStats struct {
-	BytesCompleted int
+	BytesCompleted int64
 	Wanted         bool
-	Priority       int
+	Priority       int64
 }
 
 // Peers transmission API response
@@ -223,64 +223,64 @@ type Peers struct {
 	IsUTP              bool
 	PeerIsChoked       bool
 	PeerIsInterested   bool
-	Port               int
+	Port               int64
 	Progress           float64
-	RateToClient       int
-	RateToPeer         int
+	RateToClient       int64
+	RateToPeer         int64
 }
 
 // PeersFrom transmission API response
 type PeersFrom struct {
-	FromCache    int
-	FromDht      int
-	FromIncoming int
-	FromLpd      int
-	FromLtep     int
-	FromPex      int
-	FromTracker  int
+	FromCache    int64
+	FromDht      int64
+	FromIncoming int64
+	FromLpd      int64
+	FromLtep     int64
+	FromPex      int64
+	FromTracker  int64
 }
 
 // TrackerStats transmission API response
 type TrackerStats struct {
 	Announce              string
-	AnnounceState         int
-	DownloadCount         int
+	AnnounceState         int64
+	DownloadCount         int64
 	HasAnnounced          bool
 	HasScraped            bool
 	Host                  string
-	ID                    int
+	ID                    int64
 	IsBackup              bool
-	LastAnnouncePeerCount int
+	LastAnnouncePeerCount int64
 	LastAnnounceResult    string
-	LastAnnounceStartTime int
+	LastAnnounceStartTime int64
 	LastAnnounceSucceeded bool
-	LastAnnounceTime      int
+	LastAnnounceTime      int64
 	LastAnnounceTimedOut  bool
 	LastScrapeResult      string
-	LastScrapeStartTime   int
+	LastScrapeStartTime   int64
 	LastScrapeSucceeded   bool
-	LastScrapeTime        int
-	LastScrapeTimedOut    int
-	LeecherCount          int
-	NextAnnounceTime      int
-	NextScrapeTim         int
+	LastScrapeTime        int64
+	LastScrapeTimedOut    int64
+	LeecherCount          int64
+	NextAnnounceTime      int64
+	NextScrapeTim         int64
 	Scrap                 string
-	ScrapeState           int
-	SeederCount           int
-	Tier                  int
+	ScrapeState           int64
+	SeederCount           int64
+	Tier                  int64
 }
 
 // Trackers from transmission API response
 type Trackers struct {
 	Announce string
-	ID       int
+	ID       int64
 	Scrape   string
-	Tier     int
+	Tier     int64
 }
 
 func (t *Torrent) torrentAction(method string) error {
 	type Arg struct {
-		Ids int `json:"ids"`
+		Ids int64 `json:"ids"`
 	}
 	tReq := &Request{
 		Arguments: Arg{
@@ -326,13 +326,13 @@ func (t *Torrent) Reannounce() error {
 // PathRename renames a file or directory in a torrent.
 func (t *Torrent) PathRename(path string, newPath string) error {
 	type arg struct {
-		Ids  []int  `json:"ids,string"`
-		Path string `json:"path"`
-		Name string `json:"name"`
+		Ids  []int64 `json:"ids,string"`
+		Path string  `json:"path"`
+		Name string  `json:"name"`
 	}
 	tReq := &Request{
 		Arguments: arg{
-			Ids:  []int{t.ID},
+			Ids:  []int64{t.ID},
 			Path: path,
 			Name: newPath,
 		},
@@ -352,13 +352,13 @@ func (t *Torrent) PathRename(path string, newPath string) error {
 // otherwise, search "location" for files
 func (t *Torrent) SetLocation(path string, move bool) error {
 	type arg struct {
-		Ids      []int  `json:"ids,string"`
-		Location string `json:"location"`
-		Move     bool   `json:"move,omitempty"`
+		Ids      []int64 `json:"ids,string"`
+		Location string  `json:"location"`
+		Move     bool    `json:"move,omitempty"`
 	}
 	tReq := &Request{
 		Arguments: arg{
-			Ids:      []int{t.ID},
+			Ids:      []int64{t.ID},
 			Location: path,
 			Move:     move,
 		},
@@ -391,7 +391,7 @@ func (t *Torrent) Set(arg SetTorrentArg) error {
 // Update torrent information from transmission
 func (t *Torrent) Update() error {
 	type Arg struct {
-		Ids    int      `json:"ids"`
+		Ids    int64    `json:"ids"`
 		Fields []string `json:"fields,omitempty"`
 	}
 	tReq := &Request{
